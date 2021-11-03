@@ -1,0 +1,39 @@
+<div class="mainContainer">
+  <h1 class="titleGame">Tic Tac Toe</h1>
+  <div class="field">
+    <p class="currentStatus gameDes">Start the game on the button</p>
+  </div>
+
+  <div *ngIf="this.game.gameStatus === 0" class="field">
+    <button (click)="startGame()" class="startGameButton">Start Game Now !</button>
+  </div>
+
+  <div *ngIf="this.game.gameStatus === 1" class="gameBoard">
+    <div class="players playerOne">
+      <p class="playerText">Player 1</p>
+    </div>
+
+    <div class="gameField containerFluid">
+      <div class="row">
+        <div (click)="clickSubfield($event)" position="0" class="subfield"></div>
+        <div (click)="clickSubfield($event)" position="1" class="subfield"></div>
+        <div (click)="clickSubfield($event)" position="2" class="subfield"></div>
+      </div>
+      <div class="row">
+        <div (click)="clickSubfield($event)" position="3" class="subfield"></div>
+        <div (click)="clickSubfield($event)" position="4" class="subfield"></div>
+        <div (click)="clickSubfield($event)" position="5" class="subfield"></div>
+      </div>
+      <div class="row">
+        <div (click)="clickSubfield($event)" position="6" class="subfield"></div>
+        <div (click)="clickSubfield($event)" position="7" class="subfield"></div>
+        <div (click)="clickSubfield($event)" position="8" class="subfield"></div>
+      </div>
+    </div>
+
+    <div class="players playerTwo">
+      <p class="playerText">Player 2</p>
+    </div>
+  </div>
+
+</div>
